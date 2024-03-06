@@ -105,4 +105,13 @@ return {
             end, { desc = '[S]earch [N]eovim files' })
         end,
     },
+    {
+        'nvim-telescope/telescope-file-browser.nvim',
+        event = 'VimEnter',
+        dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+        config = function()
+            vim.keymap.set('n', '<leader>fe', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[F]ile [E]xplorer (buffer)' })
+            vim.keymap.set('n', '<leader>fE', ':Telescope file_browser<CR>', { desc = '[F]ile [E]xplorer (root)' })
+        end,
+    },
 }

@@ -28,10 +28,19 @@ return {
         -- optional for floating window border decoration
         event = 'VimEnter',
         dependencies = {
+            'nvim-telescope/telescope.nvim',
             'nvim-lua/plenary.nvim',
         },
         config = function()
+            require('telescope').load_extension 'lazygit'
             vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Lazy[G]it' })
+            vim.keymap.set('n', '<leader>gf', ':LazyGitFilterCurrentFile<CR>', { desc = '[G]it[F]ilter(buffer)' })
+            vim.keymap.set('n', '<leader>gF', ':LazyGitFilter<CR>', { desc = '[G]it[F]ilter(root)' })
+            vim.keymap.set('n', '<leader>gc', ':Telescope git_bcommits<CR>', { desc = '[G]it [C]ommits(buffer)' })
+            vim.keymap.set('n', '<leader>gC', ':Telescope git_commits<CR>', { desc = '[G]it [C]ommits(root)' })
+            vim.keymap.set('n', '<leader>gp', function()
+                require('telescope').extensions.lazygit.lazygit()
+            end, { desc = '[G]it [P]roject' })
         end,
     },
 }
