@@ -43,6 +43,10 @@ return {
             vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
             vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
             vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+            vim.keymap.set('n', '<leader>ge', builtin.git_files, { desc = '[G]it [E]xplorer' })
+            vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
+            vim.keymap.set('n', '<leader>ga', builtin.git_stash, { desc = '[G]it St[a]sh' })
+            vim.keymap.set('n', '<leader>uc', builtin.colorscheme, { desc = '[U]I [C]olorscheme' })
             vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
             -- Slightly advanced example of overriding default behavior and theme
@@ -74,7 +78,12 @@ return {
         event = 'VimEnter',
         dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
         config = function()
-            vim.keymap.set('n', '<leader>fe', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[F]ile [E]xplorer (buffer)' })
+            vim.keymap.set(
+                'n',
+                '<leader>fe',
+                ':Telescope file_browser path=%:p:h select_buffer=true<CR>',
+                { desc = '[F]ile [E]xplorer (buffer)' }
+            )
             vim.keymap.set('n', '<leader>fE', ':Telescope file_browser<CR>', { desc = '[F]ile [E]xplorer (root)' })
         end,
     },
@@ -87,7 +96,12 @@ return {
         },
         config = function()
             require('telescope').load_extension 'luasnip'
-            vim.keymap.set('n', '<leader>csp', ':Telescope luasnip theme=dropdown<CR>', { desc = '[C]ode [S]nippet [P]review' })
+            vim.keymap.set(
+                'n',
+                '<leader>csp',
+                ':Telescope luasnip theme=dropdown<CR>',
+                { desc = '[C]ode [S]nippet [P]review' }
+            )
         end,
     },
 }
