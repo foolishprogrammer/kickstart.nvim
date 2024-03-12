@@ -7,6 +7,10 @@ return {
                 'NormalFloat',
                 'NvimTreeNormal',
             },
+            -- exclude_groups = {
+            --     'StatusLine',
+            --     'StatusLineNC',
+            -- },
         },
         config = function()
             vim.keymap.set('n', '<leader>ut', ':TransparentToggle<CR>', { desc = '[U]I [T]ransparency' })

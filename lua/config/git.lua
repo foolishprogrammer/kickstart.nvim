@@ -14,6 +14,9 @@ return {
                 topdelete = { text = '‾' },
                 changedelete = { text = '~' },
             },
+            on_attach = function()
+                vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line<CR>', { desc = '[G]it [B]lame' })
+            end,
         },
     },
     {

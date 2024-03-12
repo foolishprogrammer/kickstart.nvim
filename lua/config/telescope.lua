@@ -46,6 +46,8 @@ return {
             vim.keymap.set('n', '<leader>ge', builtin.git_files, { desc = '[G]it [E]xplorer' })
             vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
             vim.keymap.set('n', '<leader>ga', builtin.git_stash, { desc = '[G]it St[a]sh' })
+            vim.keymap.set('n', '<leader>gh', builtin.git_bcommits, { desc = '[G]it Commit [H]istory (buffer)' })
+            vim.keymap.set('n', '<leader>gH', builtin.git_commits, { desc = '[G]it Commit [H]istory (root)' })
             vim.keymap.set('n', '<leader>uc', builtin.colorscheme, { desc = '[U]I [C]olorscheme' })
             vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
