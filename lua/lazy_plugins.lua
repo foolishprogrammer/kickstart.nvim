@@ -1,5 +1,8 @@
 require('lazy').setup {
-    { import = 'config' },
-    'tpope/vim-sleuth',
-    { 'numToStr/Comment.nvim', opts = {} },
+    spec = {
+        { import = 'config' },
+        { import = 'custom' },
+        'tpope/vim-sleuth',
+        { 'numToStr/Comment.nvim', opts = {} },
+    },
 }
