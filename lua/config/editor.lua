@@ -56,7 +56,6 @@ return {
                             callback = vim.lsp.buf.clear_references,
                         })
                     end
-
                 end,
             })
             vim.api.nvim_create_autocmd({ 'FileType' }, {
@@ -235,6 +234,7 @@ return {
         dependencies = {
             -- Creates a beautiful debugger UI
             'rcarriga/nvim-dap-ui',
+            'nvim-neotest/nvim-nio',
 
             -- Installs the debug adapters for you
             'williamboman/mason.nvim',
