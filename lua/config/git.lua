@@ -15,7 +15,11 @@ return {
                 changedelete = { text = '~' },
             },
             on_attach = function()
-                vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line<CR>', { desc = '[G]it [B]lame' })
+                local gitsigns = require 'gitsigns'
+                -- vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line<CR>', { desc = '[G]it [B]lame' })
+                vim.keymap.set('n', '<leader>gb', function()
+                    gitsigns.blame_line { full = true }
+                end, { desc = '[G]it [B]lame' })
             end,
         },
     },
