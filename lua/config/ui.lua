@@ -26,11 +26,16 @@ return {
     },
     {
         'ellisonleao/gruvbox.nvim',
+        opts = {},
+    },
+
+    {
+        'AlexvZyl/nordic.nvim',
         lazy = false,
         priority = 1000,
-        opts = {},
         config = function()
-            vim.cmd 'colorscheme gruvbox'
+            -- vim.cmd 'colorscheme nordic'
+            require('nordic').load()
         end,
     },
 }

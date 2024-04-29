@@ -314,5 +314,10 @@ return {
         main = 'ibl',
         opts = {},
     },
+    {
+        'SmiteshP/nvim-navic',
+        requires = 'neovim/nvim-lspconfig',
+        opts = {},
+    },
 }
 -- vim: ts=2 sts=2 sw=2 et
