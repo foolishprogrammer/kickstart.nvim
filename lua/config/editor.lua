@@ -316,8 +316,15 @@ return {
     },
     {
         'SmiteshP/nvim-navic',
-        requires = 'neovim/nvim-lspconfig',
-        opts = {},
+        dependencies = { 'neovim/nvim-lspconfig' },
+        opts = function()
+            return {
+                separator = ' ',
+                highlight = true,
+                depth_limit = 5,
+                lazy_update_context = true,
+            }
+        end,
     },
 }
 -- vim: ts=2 sts=2 sw=2 et
