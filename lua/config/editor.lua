@@ -314,17 +314,30 @@ return {
         main = 'ibl',
         opts = {},
     },
+    -- {
+    --     'SmiteshP/nvim-navic',
+    --     dependencies = { 'neovim/nvim-lspconfig' },
+    --     opts = function()
+    --         return {
+    --             separator = ' ',
+    --             highlight = true,
+    --             depth_limit = 5,
+    --             lazy_update_context = true,
+    --             auto_attach = true,
+    --         }
+    --     end,
+    -- },
     {
-        'SmiteshP/nvim-navic',
-        dependencies = { 'neovim/nvim-lspconfig' },
-        opts = function()
-            return {
-                separator = ' ',
-                highlight = true,
-                depth_limit = 5,
-                lazy_update_context = true,
-            }
-        end,
+        'utilyre/barbecue.nvim',
+        name = 'barbecue',
+        version = '*',
+        dependencies = {
+            'SmiteshP/nvim-navic',
+            'nvim-tree/nvim-web-devicons', -- optional dependency
+        },
+        opts = {
+            -- configurations go here
+        },
     },
 }
 -- vim: ts=2 sts=2 sw=2 et
